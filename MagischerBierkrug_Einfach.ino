@@ -1,35 +1,17 @@
-/* Sweep
- by BARRAGAN <http://barraganstudio.com>
- This example code is in the public domain.
+/*
+Das ganze soll den neuen Bierschoff-Stab steuern.
 
- modified 8 Nov 2013
- by Scott Fitzgerald
- https://www.arduino.cc/en/Tutorial/LibraryExamples/Sweep
+Über 2 Schalter soll sich der Bierkrug der auf den Stab geschraubt ist öffnen und schließen lassen.
 
-#include <Servo.h>
+Als Schalter fungieren zwei Reed schalter (Magnetschalter) die jeh nach Reinfolge der Aktivierung Befehl 1 oder Befehl 2 ausführen.
 
-Servo myservo;  // create servo object to control a servo
+Der Bierkrug wird per Servo geöffnet und soll sich nach 30 Sekunden wieder schließen.
 
-int pos = 0;    // variable to store the servo position
+Wenn der Bierkrug geöffnet ist soll eine LED leuchten und sich nach 30 Sekunden wieder ausschalten.
 
-void setup() {
-  myservo.attach(2);  // attaches the servo on pin 9 to the servo object
-}
+Aktivierungen des Schalters sollen nach 5 Sekunden (oder so) wieder zurückgesetzt werden um mit nicht eindeutigen Befehlen umzugehen.
 
-void loop() {
-  for (pos = 20; pos <= 130; pos += 1) { // goes from 0 degrees to 180 degrees
-    // in steps of 1 degree
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(0);                       // waits 15 ms for the servo to reach the position
-  }
-  for (pos = 130; pos >= 20; pos -= 1) { // goes from 180 degrees to 0 degrees
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(100);                       // waits 15 ms for the servo to reach the position
-  }
-}
 */
-
-
 
 // Definiere Pins für Schalter, LED und Servo
 const int schalterPin1 = 2;
